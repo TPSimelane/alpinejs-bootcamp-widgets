@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="greet.js"></script>
+    <script src="greet-widget.js" defer></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script>
+        //console.log(greet('Prince'));
+        //console.log(greet('Bob'));
+        //console.log(greet('Jomo'));
+    </script>
+<style>
+    body{
+            background-color: rgb(192, 179, 168);
+            align-content: center;
+            padding: 1em;
+            font-weight: 100;
+            font-size: 1em;
+            font-variant: small-caps;
+            }
+
+    .message{
+        padding: 1em;
+        background-color: aquamarine;
+        margin-bottom: 1em;
+    }
+</style>
+
+</head>
+<body>
+    <div x-data="greetWidget">
+        <h2>Greet Widget</h2>
+
+        <div class="message" x-text="message" >
+            You will be greeted here...
+        </div>
+
+        <label for="name">Please enter your name: </label>
+        <input type="text" x-model="name" id="name">
+
+        <button x-on:click="greetMe" >Greet!</button>
+    </div>
+    
+</body>
+</html>

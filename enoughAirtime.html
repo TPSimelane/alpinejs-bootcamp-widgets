@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="enoughAirtime.js"></script>
+    <script src="enoughAirtime-widget.js" defer></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <style>
+        body{
+            background-color: rgb(192, 179, 168);
+            align-content: center;
+            padding: 1em;
+            font-weight: 100;
+            font-size: 1em;
+            font-variant: small-caps;
+            }
+
+        .message{
+            padding: 1em;
+            background-color: rgb(253, 229, 123);
+            margin-bottom: 1em;
+        }
+
+        .input > label{
+            width: 15em;
+            /*background-color: rgb(255, 155, 155);*/
+            display: inline-block;
+            padding: 0.4em;
+            margin: 0.5em;
+        }
+
+        .input > input [type="text"]{
+            padding: 0.4em;
+            margin: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div x-data="enoughAirtimeWidget">
+        <h2>Enough Airtime Widget</h2>
+       
+    <div class="input">
+        <label for="usage">Please enter your airtime usage: </label>
+        <input type="text" x-model="airtimeUsage" id="usage">
+    </div>
+    <div class="input">
+        <label for="amount">Amount available: </label>
+        <input type="text" x-model="availableAmount" id="amount">
+    </div>    
+        <div>
+            <button x-on:click="calculate" >Calculate Airtime Usage</button>
+        </div>
+        
+        <div class="message" x-text="airtimeMessage" >
+            
+        </div>
+    </div>
+</body>
+</html>
